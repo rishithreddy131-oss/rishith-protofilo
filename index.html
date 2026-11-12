@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060b0a">
+  <meta name="description" content="Rishith Reddy (Rishi) — Computer Science student and Python & web developer.">
+  <title>Rishith Reddy — Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas class="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span></span></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Rishith Reddy home">
+      <span class="brand-mark">R<span>R</span></span>
+      <span class="brand-name">Rishith Reddy<span class="brand-sub">DEVELOPER PORTFOLIO</span></span>
+    </a>
+    <div class="header-right">
+      <span class="clock"><span class="status-dot"></span><span id="ist-clock">--:--:-- IST</span></span>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#capabilities">Capabilities</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+      </nav>
+      <button class="command-trigger" type="button" aria-label="Open command menu"><span class="command-icon">⌘</span><span>Press <kbd>/</kbd> to Explore</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-shell" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span>B.Tech Computer Science Student <span class="eyebrow-separator">·</span> Python &amp; Web Developer</p>
+        <h1>Building with<br>logic<span class="title-period">.</span><br><span class="title-outline">Growing with</span><br>curiosity<span class="title-period">.</span></h1>
+        <p class="hero-subtitle"><span class="prompt-mark">&gt;</span> <span id="typed-line">Turning logic into clean Python scripts and interactive web experiences.</span><span class="caret" aria-hidden="true"></span></p>
+        <div class="hero-actions">
+          <a class="button button-primary magnetic" href="#projects" data-cursor="INSPECT">View Projects <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet magnetic" href="https://github.com/rishithreddy131-oss" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet magnetic" href="https://www.linkedin.com/in/rishith-reddy-rishi-1645673a2/" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-footnote"><span class="scroll-indicator"><i></i></span><span>SCROLL TO EXPLORE</span><span class="footnote-line"></span><span>01 / 05</span></div>
+      </div>
+
+      <div class="hero-aside">
+        <div class="hero-visual">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="portrait-frame">
+            <img class="portrait-image" src="rishi.jpg" alt="Portrait of Rishith Reddy" data-portrait>
+            <div class="portrait-fallback" aria-hidden="true"><span>RR</span><i>RISHI / 01</i></div>
+            <div class="portrait-scan"></div>
+          </div>
+          <div class="portrait-caption"><span>RISHITH REDDY</span><span>CS STUDENT <i class="status-dot"></i></span></div>
+          <span class="visual-coord coord-top">17° 23' 12.0"N</span><span class="visual-coord coord-bottom">BUILDING MODE_</span>
+          <span class="crosshair crosshair-a"></span><span class="crosshair crosshair-b"></span>
+        </div>
+        <div class="terminal-window" aria-label="Interactive profile terminal">
+          <div class="terminal-topbar"><div class="window-dots"><i></i><i></i><i></i></div><span class="terminal-label">RISHI / PROFILE.SYS</span><span class="terminal-live">LIVE</span></div>
+          <div class="terminal-tabs" role="tablist" aria-label="Profile files">
+            <button class="terminal-tab active" role="tab" aria-selected="true" id="tab-about" aria-controls="terminal-content" data-terminal="about.py">about.py</button>
+            <button class="terminal-tab" role="tab" aria-selected="false" id="tab-skills" aria-controls="terminal-content" data-terminal="skills.json">skills.json</button>
+            <button class="terminal-tab" role="tab" aria-selected="false" id="tab-goals" aria-controls="terminal-content" data-terminal="goals.md">goals.md</button>
+          </div>
+          <pre class="terminal-code" id="terminal-content" role="tabpanel" aria-labelledby="tab-about" tabindex="0"></pre>
+          <div class="terminal-status"><span><i class="status-dot"></i> SYSTEM READY</span><span>UTF-8 <span class="terminal-separator">/</span> 3 FILES</span></div>
+        </div>
+      </div>
+      <div class="hero-grid-meta"><span>PORTFOLIO / 2025—26</span><span>INDIA <span class="meta-cross">+</span> IST</span></div>
+    </section>
+
+    <section class="about section-shell section-pad" id="about">
+      <div class="section-label"><span>01</span><span>THE DEVELOPER</span><span class="label-rule"></span><span>ABOUT</span></div>
+      <div class="about-layout">
+        <h2 class="section-heading">Curious by nature.<br><span>Builder by practice.</span></h2>
+        <div class="about-copy">
+          <p class="large-copy">I’m Rishi — a Computer Science student learning to turn ideas into useful, thoughtful software.</p>
+          <p>I enjoy solving problems with Python and bringing interfaces to life with the web. My focus is on building a strong foundation, exploring how things work, and getting a little better with every project.</p>
+          <a href="#journey" class="text-link" data-cursor="OPEN">A little more about my journey <span>↘</span></a>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div><span class="stat-index">01 / FOCUS</span><strong>Computer Science</strong><span>Learning the fundamentals</span></div>
+        <div><span class="stat-index">02 / BUILD</span><strong>Python + Web</strong><span>From logic to interface</span></div>
+        <div><span class="stat-index">03 / APPROACH</span><strong>Curiosity first</strong><span>Always learning, always iterating</span></div>
+      </div>
+    </section>
+
+    <section class="capabilities section-shell section-pad" id="capabilities">
+      <div class="section-label"><span>02</span><span>THE TOOLKIT</span><span class="label-rule"></span><span>CAPABILITIES</span></div>
+      <div class="section-intro">
+        <div><h2 class="section-heading">Tools in hand.<br><span>Room to grow.</span></h2></div>
+        <p>Click a capability to see the concepts I’ve been practicing and how I put them to work.</p>
+      </div>
+      <div class="skill-filters" role="group" aria-label="Filter capabilities">
+        <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">All <span>06</span></button>
+        <button class="filter-chip" type="button" data-filter="python" aria-pressed="false">Python &amp; Logic</button>
+        <button class="filter-chip" type="button" data-filter="web" aria-pressed="false">Web Development</button>
+        <button class="filter-chip" type="button" data-filter="tools" aria-pressed="false">Tools &amp; Workflow</button>
+      </div>
+      <div class="skill-grid">
+        <button class="skill-card" type="button" data-category="python" data-skill="python"><span class="skill-top"><span>LANG / 01</span><span class="skill-arrow">↗</span></span><span class="skill-icon icon-python">Py</span><strong>Python Programming</strong><span class="skill-description">Readable scripts &amp; foundational programming</span><span class="skill-meter"><i style="--level:72%"></i></span><span class="skill-card-foot"><span>PYTHON</span><span>EXPLORE CAPABILITY</span></span></button>
+        <button class="skill-card" type="button" data-category="web" data-skill="html"><span class="skill-top"><span>WEB / 02</span><span class="skill-arrow">↗</span></span><span class="skill-icon icon-html">&lt;/&gt;</span><strong>HTML5 &amp; CSS3</strong><span class="skill-description">Semantic structure &amp; expressive styling</span><span class="skill-meter"><i style="--level:76%"></i></span><span class="skill-card-foot"><span>HTML / CSS</span><span>EXPLORE CAPABILITY</span></span></button>
+        <button class="skill-card" type="button" data-category="web" data-skill="javascript"><span class="skill-top"><span>WEB / 03</span><span class="skill-arrow">↗</span></span><span class="skill-icon icon-js">JS</span><strong>JavaScript ES6+</strong><span class="skill-description">Interactive, dynamic browser experiences</span><span class="skill-meter"><i style="--level:58%"></i></span><span class="skill-card-foot"><span>JAVASCRIPT</span><span>EXPLORE CAPABILITY</span></span></button>
+        <button class="skill-card" type="button" data-category="python" data-skill="logic"><span class="skill-top"><span>CORE / 04</span><span class="skill-arrow">↗</span></span><span class="skill-icon icon-logic">∴</span><strong>Problem Solving &amp; Logic</strong><span class="skill-description">Breaking down problems into clear steps</span><span class="skill-meter"><i style="--level:68%"></i></span><span class="skill-card-foot"><span>FOUNDATIONS</span><span>EXPLORE CAPABILITY</span></span></button>
+        <button class="skill-card" type="button" data-category="tools" data-skill="git"><span class="skill-top"><span>TOOLS / 05</span><span class="skill-arrow">↗</span></span><span class="skill-icon icon-git">⌘</span><strong>Git &amp; GitHub</strong><span class="skill-description">Version control &amp; project collaboration</span><span class="skill-meter"><i style="--level:54%"></i></span><span class="skill-card-foot"><span>WORKFLOW</span><span>EXPLORE CAPABILITY</span></span></button>
+        <button class="skill-card" type="button" data-category="web" data-skill="responsive"><span class="skill-top"><span>WEB / 06</span><span class="skill-arrow">↗</span></span><span class="skill-icon icon-responsive">▣</span><strong>Responsive UI Design</strong><span class="skill-description">Interfaces that adapt to every screen</span><span class="skill-meter"><i style="--level:64%"></i></span><span class="skill-card-foot"><span>INTERFACE</span><span>EXPLORE CAPABILITY</span></span></button>
+      </div>
+      <p class="capability-note"><span class="status-dot"></span> SKILLS IN PROGRESS <span class="note-dash">—</span> ALWAYS LEARNING, NEVER DONE.</p>
+    </section>
+
+    <section class="projects section-shell section-pad" id="projects">
+      <div class="section-label"><span>03</span><span>SELECTED WORK</span><span class="label-rule"></span><span>PROJECTS</span></div>
+      <div class="section-intro project-intro">
+        <div><h2 class="section-heading">Ideas, made<br><span>interactive.</span></h2></div>
+        <p>Small, practical builds that help me learn by doing. Each one is a step in the process.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-featured">
+          <div class="project-preview preview-python">
+            <div class="browser-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>python / automation-suite</span><span>↗</span></div>
+            <div class="preview-content python-preview-content"><div class="preview-sidebar"><b>R</b><i></i><i></i><i></i></div><div class="code-preview"><div class="code-line"><span>01</span><code><i>def</i> run_tool(data):</code></div><div class="code-line"><span>02</span><code>&nbsp;&nbsp;results = []</code></div><div class="code-line"><span>03</span><code>&nbsp;&nbsp;<i>for</i> item <i>in</i> data:</code></div><div class="code-line"><span>04</span><code>&nbsp;&nbsp;&nbsp;&nbsp;results.append(process(item))</code></div><div class="code-line"><span>05</span><code>&nbsp;&nbsp;<i>return</i> results</code></div></div><div class="preview-float-chip"><span class="status-dot"></span> SCRIPT READY</div></div>
+            <div class="project-index">PROJECT / 01</div>
+          </div>
+          <div class="project-info"><div class="project-title-line"><h3>Python Automation<br>&amp; Logic Suite</h3><span class="project-year">PYTHON</span></div><p>A collection of Python scripts focused on automating small tasks and practicing problem-solving through code.</p><div class="project-tags"><span>Problem Solving</span><span>Data Handling</span><span>Modular Scripts</span></div><div class="engineering-note"><span>ENGINEERING NOTES</span><p>Explores algorithmic thinking, structured data handling, and breaking scripts into reusable pieces.</p></div><a class="project-link" href="https://github.com" target="_blank" rel="noopener noreferrer" data-cursor="LAUNCH">View on GitHub <span>↗</span></a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-preview preview-expense">
+            <div class="browser-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>split / expenses</span><span>↗</span></div>
+            <div class="expense-preview-content"><div class="expense-top"><span>HOUSE TRIP / 04</span><b>•••</b></div><div class="expense-title">Shared expenses<span>Keep it even.</span></div><div class="expense-total"><span>TOTAL SPENT</span><b>$<em>486</em>.50</b></div><div class="expense-row"><span class="avatar-dot avatar-a">A</span><span>Alex</span><span>$182.50</span></div><div class="expense-row"><span class="avatar-dot avatar-b">J</span><span>Jordan</span><span>$204.00</span></div><div class="expense-row"><span class="avatar-dot avatar-c">S</span><span>Sam</span><span>$100.00</span></div><div class="expense-balance"><span>SETTLED UP</span><span>✓</span></div></div>
+            <div class="project-index">PROJECT / 02</div>
+          </div>
+          <div class="project-info"><div class="project-title-line"><h3>Interactive Expense<br>&amp; Budget Splitter</h3><span class="project-year">WEB APP</span></div><p>A shared-expense tracker concept for logging group spending and seeing who owes what.</p><div class="project-tags"><span>HTML / CSS</span><span>JavaScript</span><span>localStorage</span></div><div class="engineering-note"><span>ENGINEERING NOTES</span><p>Practices dynamic UI updates, balance calculations, and keeping data in the browser with localStorage.</p></div><a class="project-link" href="https://github.com/rishithreddy131-oss" target="_blank" rel="noopener noreferrer" data-cursor="LAUNCH">View on GitHub <span>↗</span></a></div>
+        </article>
+        <article class="project-card">
+          <div class="project-preview preview-portfolio">
+            <div class="browser-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>rishi / portfolio</span><span>↗</span></div>
+            <div class="portfolio-preview-content"><div class="mini-nav"><b>RR<span>.</span></b><span>ABOUT&nbsp;&nbsp; WORK&nbsp;&nbsp; CONTACT</span><i></i></div><div class="mini-hero"><span>CS STUDENT · DEVELOPER</span><b>Building with<br><i>curiosity.</i></b><small>PYTHON / WEB / IDEAS</small></div><div class="mini-cards"><i></i><i></i><i></i></div><div class="mini-glow"></div></div>
+            <div class="project-index">PROJECT / 03</div>
+          </div>
+          <div class="project-info"><div class="project-title-line"><h3>Personal Developer<br>Portfolio</h3><span class="project-year">WEB / UI</span></div><p>This portfolio: a responsive home for my work, interests, and the things I’m learning.</p><div class="project-tags"><span>Responsive UI</span><span>Canvas Motion</span><span>DOM</span></div><div class="engineering-note"><span>ENGINEERING NOTES</span><p>Combines a custom animated canvas, modular CSS, and accessible dynamic modals.</p></div><a class="project-link" href="https://github.com/rishithreddy131-oss" target="_blank" rel="noopener noreferrer" data-cursor="LAUNCH">View on GitHub <span>↗</span></a></div>
+        </article>
+      </div>
+      <div class="projects-footer"><span>THREE BUILDS <i class="status-dot"></i> AND COUNTING</span><span>MORE EXPERIMENTS IN PROGRESS <span>↗</span></span></div>
+    </section>
+
+    <section class="journey section-shell section-pad" id="journey">
+      <div class="section-label"><span>04</span><span>THE ROAD SO FAR</span><span class="label-rule"></span><span>JOURNEY</span></div>
+      <div class="journey-layout">
+        <div class="journey-heading"><h2 class="section-heading">Learning is<br><span>the journey.</span></h2><p>No shortcuts, no finish line. Just a growing curiosity and the next thing to build.</p><span class="journey-stamp">IN PROGRESS <i class="status-dot"></i></span></div>
+        <div class="timeline">
+          <article class="timeline-item"><span class="timeline-index">01</span><span class="timeline-dot"></span><div><span class="timeline-kicker">FOUNDATION / CURRENT</span><h3>B.Tech Computer Science</h3><p>Building a foundation in computer science and learning how software ideas translate into working programs.</p><span class="timeline-tags">COMPUTER SCIENCE <i>·</i> FUNDAMENTALS</span></div></article>
+          <article class="timeline-item"><span class="timeline-index">02</span><span class="timeline-dot"></span><div><span class="timeline-kicker">LANGUAGE / IN PRACTICE</span><h3>Python programming journey</h3><p>Practicing core programming concepts, clear logic, and small scripts that solve practical problems.</p><span class="timeline-tags">PYTHON <i>·</i> PROBLEM SOLVING</span></div></article>
+          <article class="timeline-item"><span class="timeline-index">03</span><span class="timeline-dot"></span><div><span class="timeline-kicker">INTERFACES / EXPLORING</span><h3>Modern web development</h3><p>Exploring responsive design and JavaScript interactions to create useful experiences in the browser.</p><span class="timeline-tags">HTML / CSS <i>·</i> JAVASCRIPT</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-shell section-pad" id="contact">
+      <div class="section-label"><span>05</span><span>OPEN CHANNEL</span><span class="label-rule"></span><span>CONTACT</span></div>
+      <div class="contact-layout">
+        <div class="contact-copy"><p class="eyebrow"><span class="status-dot"></span> AVAILABLE FOR A CONVERSATION</p><h2 class="section-heading">Have an idea?<br><span>Let’s talk.</span></h2><p>I’m always glad to connect, learn about a new idea, or talk about what we’re building.</p>
+          <button class="email-copy magnetic" type="button" data-email="rishithreddy131@gmail.com" data-cursor="OPEN"><span class="email-icon">@</span><span><small>DROP A NOTE</small><strong>rishithreddy131@gmail.com</strong></span><span class="copy-label">COPY ↗</span></button>
+          <div class="social-links"><a href="https://github.com/rishithreddy131-oss" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">GitHub <span>↗</span></a><a href="https://www.linkedin.com/in/rishith-reddy-rishi-1645673a2/" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">LinkedIn <span>↗</span></a></div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-heading"><span>MESSAGE.RQ</span><span><i class="status-dot"></i> SECURE CONNECTION</span></div>
+          <label for="contact-name">YOUR NAME <span>*</span></label><input id="contact-name" name="name" type="text" autocomplete="name" placeholder="How should I address you?" required maxlength="100">
+          <label for="contact-email">EMAIL ADDRESS <span>*</span></label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="254">
+          <label for="contact-message">MESSAGE <span>*</span></label><textarea id="contact-message" name="message" rows="4" placeholder="What’s on your mind?" required maxlength="2000"></textarea>
+          <button class="button button-primary submit-button magnetic" type="submit" data-cursor="LAUNCH"><span>Send message</span><span>↗</span></button>
+          <p class="form-note">This demo form shows a confirmation in your browser; it does not send or store your message. Email me directly to get in touch.</p>
+          <p class="form-success" id="form-success" role="status" hidden><span>✓</span> Thanks, <b data-success-name></b> — your message is ready. Please email me directly to send it.</p>
+        </form>
+      </div>
+      <div class="contact-signal" aria-hidden="true"><span>CONNECTING MINDS</span><i></i><i></i><i></i><span>READY</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell"><a class="footer-brand" href="#home">RR<span>.</span></a><span>DESIGNED &amp; BUILT BY RISHI <i class="status-dot"></i></span><span>© 2025—26 <a href="#home">BACK TO TOP ↑</a></span></footer>
+
+  <dialog class="skill-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" aria-label="Close capability details">×</button>
+    <span class="dialog-kicker">CAPABILITY / DETAIL</span><span class="dialog-icon" aria-hidden="true"></span><h2 id="dialog-title"></h2><p class="dialog-summary"></p><div class="dialog-detail"><span>CONCEPTS IN PRACTICE</span><p class="dialog-concepts"></p></div><div class="dialog-detail"><span>HOW I APPLY IT</span><p class="dialog-application"></p></div><div class="dialog-progress"><span>LEARNING IN PROGRESS</span><span><i></i></span></div>
+  </dialog>
+  <dialog class="command-dialog" aria-label="Explore portfolio">
+    <div class="command-search"><span>⌘</span><input type="search" placeholder="Where would you like to go?" aria-label="Search portfolio sections"><kbd>ESC</kbd></div>
+    <div class="command-list" role="listbox" aria-label="Portfolio sections">
+      <a role="option" href="#about"><span>01</span> About <kbd>A</kbd></a><a role="option" href="#capabilities"><span>02</span> Capabilities <kbd>C</kbd></a><a role="option" href="#projects"><span>03</span> Projects <kbd>P</kbd></a><a role="option" href="#journey"><span>04</span> Journey <kbd>J</kbd></a><a role="option" href="#contact"><span>05</span> Contact <kbd>M</kbd></a>
+    </div>
+    <div class="command-foot"><span>RISHI / PORTFOLIO</span><span>↑↓ NAVIGATE <i>·</i> ENTER SELECT</span></div>
+  </dialog>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
