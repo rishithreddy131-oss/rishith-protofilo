@@ -207,6 +207,7 @@ h1 { margin: 28px 0 20px; font: 500 clamp(54px, 6.35vw, 94px)/.98 var(--display)
 .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }.project-tags span { padding: 4px 8px; border: 1px solid var(--line); color: #9eada4; font: 8px var(--mono); }
 .engineering-note { margin: 17px 0; padding: 10px 12px; border-left: 1px solid var(--green); background: rgba(16,185,129,.045); }
 .engineering-note > span { color: var(--green); font-size: 7px; }.engineering-note p { margin: 3px 0 0; color: #8f9e95; font-size: 10px; }
+.project-links { display: flex; flex-wrap: wrap; gap: 20px; }
 .project-link { display: inline-flex; align-items: center; gap: 22px; color: var(--green-bright); font-size: 10px; }.project-link span { font-size: 14px; }
 .projects-footer { display: flex; margin-top: 52px; padding-top: 17px; justify-content: space-between; border-top: 1px solid var(--line); color: var(--dim); font-size: 8px; }.projects-footer .status-dot { margin: 0 6px; vertical-align: 1px; }.projects-footer > span:last-child span { color: var(--green); }
 
