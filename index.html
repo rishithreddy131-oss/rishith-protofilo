@@ -35,10 +35,23 @@
 
   <main>
     <section class="hero section-shell" id="home">
+      <svg class="aurora-field hero-aurora" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="hero-aurora-green"><stop stop-color="#10b981" stop-opacity=".3"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
+          <radialGradient id="hero-aurora-amber"><stop stop-color="#f59e0b" stop-opacity=".2"/><stop offset="1" stop-color="#f59e0b" stop-opacity="0"/></radialGradient>
+          <filter id="hero-aurora-blur"><feGaussianBlur stdDeviation="30"/></filter>
+        </defs>
+        <path class="aurora-blob aurora-blob-green" fill="url(#hero-aurora-green)" filter="url(#hero-aurora-blur)" d="M650 70 C840 35 1080 170 1070 345 C1060 510 880 620 680 640 C470 660 300 550 315 360 C330 175 465 95 650 70 Z">
+          <animate attributeName="d" begin="indefinite" dur="24s" repeatCount="indefinite" values="M650 70 C840 35 1080 170 1070 345 C1060 510 880 620 680 640 C470 660 300 550 315 360 C330 175 465 95 650 70 Z;M650 105 C865 20 1050 200 1090 360 C1120 520 850 665 655 620 C440 585 285 495 345 320 C390 170 475 155 650 105 Z;M650 70 C840 35 1080 170 1070 345 C1060 510 880 620 680 640 C470 660 300 550 315 360 C330 175 465 95 650 70 Z"/>
+        </path>
+        <path class="aurora-blob aurora-blob-amber" fill="url(#hero-aurora-amber)" filter="url(#hero-aurora-blur)" d="M345 300 C480 190 655 245 725 370 C800 500 700 650 555 665 C395 675 260 555 270 430 C275 370 300 335 345 300 Z">
+          <animate attributeName="d" begin="indefinite" dur="29s" repeatCount="indefinite" values="M345 300 C480 190 655 245 725 370 C800 500 700 650 555 665 C395 675 260 555 270 430 C275 370 300 335 345 300 Z;M365 270 C520 210 670 300 700 415 C735 545 650 650 510 680 C370 700 250 570 275 445 C290 365 305 315 365 270 Z;M345 300 C480 190 655 245 725 370 C800 500 700 650 555 665 C395 675 260 555 270 430 C275 370 300 335 345 300 Z"/>
+        </path>
+      </svg>
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span>B.Tech Computer Science Student <span class="eyebrow-separator">·</span> Python &amp; Web Developer</p>
-        <h1>Building with<br>logic<span class="title-period">.</span><br><span class="title-outline">Growing with</span><br>curiosity<span class="title-period">.</span></h1>
-        <p class="hero-subtitle"><span class="prompt-mark">&gt;</span> <span id="typed-line">Turning logic into clean Python scripts and interactive web experiences.</span><span class="caret" aria-hidden="true"></span></p>
+        <h1 class="kinetic-headline"><span class="headline-mask"><span class="headline-line">Building with</span></span><br><span class="headline-mask"><span class="headline-line shimmer-text">logic<span class="title-period">.</span></span></span><br><span class="headline-mask"><span class="headline-line title-outline shimmer-text">Growing with</span></span><br><span class="headline-mask"><span class="headline-line shimmer-text">curiosity<span class="title-period">.</span></span></span></h1>
+        <p class="hero-subtitle"><span class="prompt-mark">&gt;</span> <span class="subtitle-mask"><span id="typed-line">Turning logic into clean Python scripts and interactive web experiences.</span></span><span class="caret" aria-hidden="true"></span></p>
         <div class="hero-actions">
           <a class="button button-primary magnetic" href="#projects" data-cursor="INSPECT">View Projects <span aria-hidden="true">↗</span></a>
           <a class="button button-quiet magnetic" href="https://github.com" target="_blank" rel="noopener noreferrer" data-cursor="OPEN">GitHub <span aria-hidden="true">↗</span></a>
@@ -90,6 +103,21 @@
       </div>
     </section>
 
+    <section class="tech-marquee" aria-label="Technology stack">
+      <div class="marquee-row marquee-forward" role="list" aria-label="Tools and skills">
+        <div class="marquee-track">
+          <span role="listitem">Python</span><span aria-hidden="true">✳</span><span role="listitem">HTML5</span><span aria-hidden="true">✳</span><span role="listitem">CSS3</span><span aria-hidden="true">✳</span><span role="listitem">JavaScript ES6+</span><span aria-hidden="true">✳</span><span role="listitem">Git</span><span aria-hidden="true">✳</span><span role="listitem">GitHub</span><span aria-hidden="true">✳</span><span role="listitem">Problem Solving</span><span aria-hidden="true">✳</span><span role="listitem">Responsive UI</span><span aria-hidden="true">✳</span>
+          <span aria-hidden="true">Python</span><span aria-hidden="true">✳</span><span aria-hidden="true">HTML5</span><span aria-hidden="true">✳</span><span aria-hidden="true">CSS3</span><span aria-hidden="true">✳</span><span aria-hidden="true">JavaScript ES6+</span><span aria-hidden="true">✳</span><span aria-hidden="true">Git</span><span aria-hidden="true">✳</span><span aria-hidden="true">GitHub</span><span aria-hidden="true">✳</span><span aria-hidden="true">Problem Solving</span><span aria-hidden="true">✳</span><span aria-hidden="true">Responsive UI</span><span aria-hidden="true">✳</span>
+        </div>
+      </div>
+      <div class="marquee-row marquee-reverse" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Responsive UI</span><span>⌘</span><span>Problem Solving</span><span>⌘</span><span>GitHub</span><span>⌘</span><span>Git</span><span>⌘</span><span>JavaScript ES6+</span><span>⌘</span><span>CSS3</span><span>⌘</span><span>HTML5</span><span>⌘</span><span>Python</span><span>⌘</span>
+          <span>Responsive UI</span><span>⌘</span><span>Problem Solving</span><span>⌘</span><span>GitHub</span><span>⌘</span><span>Git</span><span>⌘</span><span>JavaScript ES6+</span><span>⌘</span><span>CSS3</span><span>⌘</span><span>HTML5</span><span>⌘</span><span>Python</span><span>⌘</span>
+        </div>
+      </div>
+    </section>
+
     <section class="capabilities section-shell section-pad" id="capabilities">
       <div class="section-label"><span>02</span><span>THE TOOLKIT</span><span class="label-rule"></span><span>CAPABILITIES</span></div>
       <div class="section-intro">
@@ -114,6 +142,27 @@
     </section>
 
     <section class="projects section-shell section-pad" id="projects">
+      <svg class="aurora-field projects-aurora" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="projects-aurora-green"><stop stop-color="#10b981" stop-opacity=".22"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
+          <radialGradient id="projects-aurora-amber"><stop stop-color="#f59e0b" stop-opacity=".16"/><stop offset="1" stop-color="#f59e0b" stop-opacity="0"/></radialGradient>
+          <filter id="projects-aurora-blur"><feGaussianBlur stdDeviation="36"/></filter>
+        </defs>
+        <path fill="url(#projects-aurora-green)" filter="url(#projects-aurora-blur)" d="M690 80 C900 20 1110 170 1090 370 C1070 565 875 685 675 660 C480 645 340 520 355 350 C370 175 490 115 690 80 Z">
+          <animate attributeName="d" begin="indefinite" dur="26s" repeatCount="indefinite" values="M690 80 C900 20 1110 170 1090 370 C1070 565 875 685 675 660 C480 645 340 520 355 350 C370 175 490 115 690 80 Z;M690 125 C875 45 1085 190 1110 385 C1130 565 860 710 670 655 C455 595 315 545 375 350 C415 210 490 175 690 125 Z;M690 80 C900 20 1110 170 1090 370 C1070 565 875 685 675 660 C480 645 340 520 355 350 C370 175 490 115 690 80 Z"/>
+        </path>
+        <path fill="url(#projects-aurora-amber)" filter="url(#projects-aurora-blur)" d="M350 390 C470 250 650 300 715 435 C785 570 655 720 510 725 C350 730 245 625 265 495 C275 445 305 415 350 390 Z">
+          <animate attributeName="d" begin="indefinite" dur="31s" repeatCount="indefinite" values="M350 390 C470 250 650 300 715 435 C785 570 655 720 510 725 C350 730 245 625 265 495 C275 445 305 415 350 390 Z;M365 355 C520 270 675 355 700 470 C730 600 625 720 485 740 C350 755 230 635 270 500 C295 420 300 395 365 355 Z;M350 390 C470 250 650 300 715 435 C785 570 655 720 510 725 C350 730 245 625 265 495 C275 445 305 415 350 390 Z"/>
+        </path>
+      </svg>
+      <div class="circuit-bridge" aria-hidden="true">
+        <svg viewBox="0 0 1200 96" preserveAspectRatio="none">
+          <path class="circuit-trace" id="circuit-route-a" d="M0 64 H150 V24 H360 V70 H575 V38 H790 V72 H1010 V28 H1200"/>
+          <path class="circuit-trace circuit-trace-amber" id="circuit-route-b" d="M0 30 H215 V72 H430 V32 H650 V66 H865 V24 H1050 V62 H1200"/>
+          <circle class="circuit-packet" r="3"><animateMotion dur="5s" repeatCount="indefinite" begin="indefinite"><mpath href="#circuit-route-a"/></animateMotion></circle>
+          <circle class="circuit-packet circuit-packet-amber" r="2.5"><animateMotion dur="6.5s" repeatCount="indefinite" begin="indefinite"><mpath href="#circuit-route-b"/></animateMotion></circle>
+        </svg>
+      </div>
       <div class="section-label"><span>03</span><span>SELECTED WORK</span><span class="label-rule"></span><span>PROJECTS</span></div>
       <div class="section-intro project-intro">
         <div><h2 class="section-heading">Ideas, made<br><span>interactive.</span></h2></div>
@@ -142,7 +191,7 @@
             <div class="portfolio-preview-content"><div class="mini-nav"><b>RR<span>.</span></b><span>ABOUT&nbsp;&nbsp; WORK&nbsp;&nbsp; CONTACT</span><i></i></div><div class="mini-hero"><span>CS STUDENT · DEVELOPER</span><b>Building with<br><i>curiosity.</i></b><small>PYTHON / WEB / IDEAS</small></div><div class="mini-cards"><i></i><i></i><i></i></div><div class="mini-glow"></div></div>
             <div class="project-index">PROJECT / 03</div>
           </div>
-          <div class="project-info"><div class="project-title-line"><h3>Personal Developer<br>Portfolio</h3><span class="project-year">WEB / UI</span></div><p>This portfolio: a responsive home for my work, interests, and the things I’m learning.</p><div class="project-tags"><span>Responsive UI</span><span>Canvas Motion</span><span>DOM</span></div><div class="engineering-note"><span>ENGINEERING NOTES</span><p>Combines a custom animated canvas, modular CSS, and accessible dynamic modals.</p></div><div class="project-links"><a class="project-link" href="https://rishithreddy131-oss.github.io/rishith-protofilo/" target="_blank" rel="noopener noreferrer" data-cursor="LAUNCH">Live Demo <span>↗</span></a><a class="project-link" href="https://github.com/rishith-protofilo" target="_blank" rel="noopener noreferrer" data-cursor="LAUNCH">View on GitHub <span>↗</span></a></div></div>
+          <div class="project-info"><div class="project-title-line"><h3>Personal Developer<br>Portfolio</h3><span class="project-year">WEB / UI</span></div><p>This portfolio: a responsive home for my work, interests, and the things I’m learning.</p><div class="project-tags"><span>Responsive UI</span><span>Canvas Motion</span><span>DOM</span></div><div class="engineering-note"><span>ENGINEERING NOTES</span><p>Combines a custom animated canvas, modular CSS, and accessible dynamic modals.</p></div><div class="project-links"><a class="project-link" href="https://github.io" target="_blank" rel="noopener noreferrer" data-cursor="LAUNCH">Live Demo <span>↗</span></a><a class="project-link" href="https://github.com/rishith-protofilo" target="_blank" rel="noopener noreferrer" data-cursor="LAUNCH">View on GitHub <span>↗</span></a></div></div>
         </article>
       </div>
       <div class="projects-footer"><span>THREE BUILDS <i class="status-dot"></i> AND COUNTING</span><span>MORE EXPERIMENTS IN PROGRESS <span>↗</span></span></div>

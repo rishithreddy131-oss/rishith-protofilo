@@ -165,24 +165,6 @@ skillCards.forEach((card) => {
     skillDialog.showModal();
     dialogClose?.focus();
   });
-  if (finePointer && !reducedMotion) {
-    card.addEventListener("pointermove", (event) => {
-      if (event.pointerType !== "mouse") return;
-      const bounds = card.getBoundingClientRect();
-      const x = event.clientX - bounds.left;
-      const y = event.clientY - bounds.top;
-      const rotateY = ((x / bounds.width) - 0.5) * 4;
-      const rotateX = (0.5 - (y / bounds.height)) * 4;
-      card.style.setProperty("--mx", `${(x / bounds.width) * 100}%`);
-      card.style.setProperty("--my", `${(y / bounds.height) * 100}%`);
-      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-    card.addEventListener("pointerleave", () => {
-      card.style.transform = "";
-      card.style.setProperty("--mx", "50%");
-      card.style.setProperty("--my", "30%");
-    });
-  }
 });
 dialogClose?.addEventListener("click", () => skillDialog?.close());
 skillDialog?.addEventListener("close", () => lastSkillTrigger?.focus());
@@ -330,6 +312,62 @@ if ("IntersectionObserver" in window) {
   sections.forEach((section) => navObserver.observe(section));
 }
 
+if (finePointer && !reducedMotion) {
+  function addSpringTilt(element, maxTilt = 8) {
+    const state = { x: 0, y: 0, vx: 0, vy: 0, targetX: 0, targetY: 0, frame: 0, lastTime: 0 };
+    element.classList.add("tilt-target");
+    const animateTilt = (time) => {
+      const step = Math.min((time - (state.lastTime || time - 16.67)) / 16.67, 2);
+      state.lastTime = time;
+      state.vx = (state.vx + (state.targetX - state.x) * 0.12 * step) * Math.pow(0.72, step);
+      state.vy = (state.vy + (state.targetY - state.y) * 0.12 * step) * Math.pow(0.72, step);
+      state.x += state.vx * step;
+      state.y += state.vy * step;
+      element.style.setProperty("--tilt-x", `${state.x.toFixed(2)}deg`);
+      element.style.setProperty("--tilt-y", `${state.y.toFixed(2)}deg`);
+      if (Math.abs(state.targetX - state.x) + Math.abs(state.targetY - state.y) > 0.025
+        || Math.abs(state.vx) + Math.abs(state.vy) > 0.025) {
+        state.frame = window.requestAnimationFrame(animateTilt);
+      } else {
+        state.x = state.targetX;
+        state.y = state.targetY;
+        state.vx = 0;
+        state.vy = 0;
+        state.frame = 0;
+        if (state.targetX === 0 && state.targetY === 0) element.classList.remove("is-tilting");
+      }
+    };
+    const requestTiltFrame = () => {
+      if (!state.frame) state.frame = window.requestAnimationFrame(animateTilt);
+    };
+    element.addEventListener("pointermove", (event) => {
+      if (event.pointerType !== "mouse") return;
+      const bounds = element.getBoundingClientRect();
+      if (!bounds.width || !bounds.height) return;
+      const x = (event.clientX - bounds.left) / bounds.width;
+      const y = (event.clientY - bounds.top) / bounds.height;
+      state.targetX = (0.5 - y) * maxTilt;
+      state.targetY = (x - 0.5) * maxTilt;
+      element.classList.add("is-tilting");
+      element.style.setProperty("--glare-x", `${(x * 100).toFixed(1)}%`);
+      element.style.setProperty("--glare-y", `${(y * 100).toFixed(1)}%`);
+      requestTiltFrame();
+    }, { passive: true });
+    element.addEventListener("pointerleave", () => {
+      state.targetX = 0;
+      state.targetY = 0;
+      element.style.setProperty("--glare-x", "50%");
+      element.style.setProperty("--glare-y", "35%");
+      requestTiltFrame();
+    });
+  }
+
+  document.querySelectorAll(".skill-card, .project-card").forEach((element) => {
+    addSpringTilt(element, element.matches(".project-card") ? 5 : 7);
+  });
+  document.querySelectorAll(".terminal-window, .portrait-frame").forEach((element) => addSpringTilt(element, 5));
+}
+
 if ("IntersectionObserver" in window && !reducedMotion) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
@@ -338,11 +376,67 @@ if ("IntersectionObserver" in window && !reducedMotion) {
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll(".section-label, .about-layout, .about-stats, .section-intro, .skill-card, .project-card, .timeline-item, .contact-form")
-    .forEach((element) => {
-      element.classList.add("reveal-ready");
-      revealObserver.observe(element);
+  const revealItems = document.querySelectorAll(".section-label, .about-layout, .about-stats, .section-intro, .skill-card, .project-card, .timeline-item, .contact-form");
+  const revealOrder = new Map();
+  revealItems.forEach((element) => {
+    const parent = element.parentElement;
+    const index = revealOrder.get(parent) || 0;
+    revealOrder.set(parent, index + 1);
+    element.style.setProperty("--reveal-delay", `${index * 85}ms`);
+    element.classList.add("reveal-ready");
+    revealObserver.observe(element);
+  });
+}
+
+document.querySelectorAll(".aurora-field animate").forEach((animation) => {
+  if (!reducedMotion && typeof animation.beginElement === "function") animation.beginElement();
+});
+
+const circuitBridge = document.querySelector(".circuit-bridge");
+if (circuitBridge && !reducedMotion) {
+  const circuitAnimations = [...circuitBridge.querySelectorAll("animateMotion")];
+  const setCircuitMotion = (active) => {
+    circuitBridge.classList.toggle("is-live", active);
+    circuitAnimations.forEach((animation) => {
+      const method = active ? animation.beginElement : animation.endElement;
+      if (typeof method === "function") method.call(animation);
     });
+  };
+  if ("IntersectionObserver" in window) {
+    const circuitObserver = new IntersectionObserver(([entry]) => {
+      setCircuitMotion(entry.isIntersecting);
+    }, { threshold: 0.1 });
+    circuitObserver.observe(circuitBridge);
+  } else {
+    setCircuitMotion(true);
+  }
+}
+
+const techMarquee = document.querySelector(".tech-marquee");
+if (techMarquee && !reducedMotion) {
+  let speedFrame = 0;
+  const rampMarqueeSpeed = (targetSpeed) => {
+    window.cancelAnimationFrame(speedFrame);
+    const animations = [...techMarquee.querySelectorAll(".marquee-track")]
+      .flatMap((track) => track.getAnimations());
+    const starts = animations.map((animation) => animation.playbackRate || 1);
+    const startedAt = performance.now();
+    const updateSpeed = (time) => {
+      const progress = Math.min((time - startedAt) / 550, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      animations.forEach((animation, index) => {
+        animation.playbackRate = starts[index] + (targetSpeed - starts[index]) * eased;
+      });
+      if (progress < 1) speedFrame = window.requestAnimationFrame(updateSpeed);
+    };
+    speedFrame = window.requestAnimationFrame(updateSpeed);
+  };
+  techMarquee.addEventListener("pointerenter", () => rampMarqueeSpeed(0.18));
+  techMarquee.addEventListener("pointerleave", () => rampMarqueeSpeed(1));
+  techMarquee.addEventListener("focusin", () => rampMarqueeSpeed(0.18));
+  techMarquee.addEventListener("focusout", (event) => {
+    if (!techMarquee.contains(event.relatedTarget)) rampMarqueeSpeed(1);
+  });
 }
 
 const toast = document.querySelector(".toast");
