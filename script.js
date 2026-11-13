@@ -312,7 +312,8 @@ mainNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", 
 
 const navigationLinks = [...document.querySelectorAll(".main-nav a")];
 const sections = navigationLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter((link) => link.hash)
+  .map((link) => document.querySelector(link.hash))
   .filter(Boolean);
 if ("IntersectionObserver" in window) {
   const navObserver = new IntersectionObserver((entries) => {
